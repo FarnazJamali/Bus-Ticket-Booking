@@ -1,0 +1,24 @@
+ * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
+
+ .vh-10 {
+     height: 10px;
+ }
+
+ .vh-30 {
+     height: 30px;
+ }
+
+ .square {
+     width: 20px;
+     height: 20px;
+ }
+
+ #seat0\[1\]>*,
+ #seat5\[1\]>*,
+ #seat5\[2\]>* {
+     background-color: #ffc107 !important;
+ }
