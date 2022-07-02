@@ -17,8 +17,8 @@
      height: 20px;
  }
 
- #seat0\[1\]>*,
- #seat5\[1\]>*,
- #seat5\[2\]>* {
+ #seat2>*,
+ #seat14>*,
+ #seat15>* {
      background-color: #ffc107 !important;
  }
