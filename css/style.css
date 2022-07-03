@@ -6,10 +6,12 @@
 
  .vh-10 {
      height: 10px;
+     background-color: #6c757d;
  }
 
  .vh-30 {
      height: 30px;
+     background-color: #6c757d;
  }
 
  .square {
