@@ -149,8 +149,9 @@ let reserved = [];
 function reservation(e) {
     console.log(e)
     console.log(!(reserved.includes(e)))
-    if (!(reserved.includes(e)) && !(e === 2) && !(e === 14) && !(e === 15)) {
+    if (!(reserved.includes(e) || e === 2 || e === 14 || e === 15)) {
         reserved.push(e);
+        console.log(reserved)
         document.getElementById('tickets').innerHTML += e + ",";
         let changeBgColor = document.querySelector(`#seat${e} > div.vh-30`);
         let changeBgColor1 = document.querySelector(`#seat${e} > div.vh-10`);
