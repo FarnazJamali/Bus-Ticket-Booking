@@ -165,4 +165,5 @@ document.getElementById("clearButton").addEventListener("click", clearReservatio
 function clearReservation() {
     document.getElementById('tickets').innerHTML = " ";
     rowsMaker();
+    reserved = []
 }
