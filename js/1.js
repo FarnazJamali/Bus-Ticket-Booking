@@ -123,18 +123,19 @@ function rowsMaker() {
                             <div div class = "col-1 me-auto"
                             id = "seat${seat.seats[0].seatName}"
                             onclick = "reservation(${seat.seats[0].seatName})" >
+                                <div class = "vh-30" > </div>
                                 <div class = "my-1 vh-10" > </div>
-                                <div class="vh-30"></div>
-                            </div>
+                              </div>
                             <div class = "col-1 me-2"
                             id = "seat${seat.seats[1].seatName}"
                             onclick = "reservation(${seat.seats[1].seatName})" >
-                                <div class = "my-1 vh-10" > </div> 
-                                <div class = "vh-30" > </div> </div > 
-                                <div class = "col-1 ms-2" id = "seat${seat.seats[2].seatName}"
-                            onclick = "reservation(${seat.seats[2].seatName})" >
+                                <div class = "vh-30"> </div> 
                                 <div class = "my-1 vh-10"> </div> 
-                                <div class = "vh-30"  </div> 
+                            </div>    
+                            <div class = "col-1 ms-2" id = "seat${seat.seats[2].seatName}"
+                            onclick = "reservation(${seat.seats[2].seatName})" >
+                                <div class = "vh-30"> </div>  
+                                <div class = "my-1 vh-10"> </div> 
                                 </div> </div> </div>
                             `
 
@@ -143,15 +144,19 @@ function rowsMaker() {
     document.getElementById("busPlan").innerHTML = rows.join(" ");
 
 }
+let reserved = [];
 
 function reservation(e) {
     console.log(e)
-    // if (seatsPlan.seats[e].reservedStatus == "false")
-    document.getElementById('tickets').innerHTML += e + ",";
-    let changeBgColor = document.querySelector(`#seat${e} > div.vh-30`);
-    let changeBgColor1 = document.querySelector(`#seat${e} > div.vh-10`);
-    changeBgColor.style.backgroundColor = '#198754';
-    changeBgColor1.style.backgroundColor = '#198754';
+    console.log(!(reserved.includes(e)))
+    if (!(reserved.includes(e)) && !(e === 2) && !(e === 14) && !(e === 15)) {
+        reserved.push(e);
+        document.getElementById('tickets').innerHTML += e + ",";
+        let changeBgColor = document.querySelector(`#seat${e} > div.vh-30`);
+        let changeBgColor1 = document.querySelector(`#seat${e} > div.vh-10`);
+        changeBgColor.style.backgroundColor = '#198754';
+        changeBgColor1.style.backgroundColor = '#198754';
+    }
 }
 
 document.getElementById("clearButton").addEventListener("click", clearReservation)
